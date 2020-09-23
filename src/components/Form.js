@@ -86,7 +86,6 @@ export default class Form extends React.Component {
   }
 
   onDobChange(event) {
-    console.log(event.target.value)
     this.setState({ dob: event.target.value })
   }
 
@@ -113,7 +112,7 @@ export default class Form extends React.Component {
     })
 
     axios.post(
-      'http://localhost:8000/userdata/',
+      'http://ec2-13-127-22-123.ap-south-1.compute.amazonaws.com/api/userdata/',
       this.state,
       {
         headers: {

@@ -1,11 +1,8 @@
-import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import axios from 'axios';
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -34,11 +31,6 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
 
 export default class List extends React.Component {
 
@@ -57,9 +49,9 @@ export default class List extends React.Component {
 
   componentDidMount() {
     axios.get(
-      'http://ec2-13-232-194-142.ap-south-1.compute.amazonaws.com/api/userdata/?format=json',
+      'http://ec2-13-127-22-123.ap-south-1.compute.amazonaws.com/api/userdata/?format=json',
     ).then(rsp => {
-      console.log(rsp.data)
+      // console.log(rsp.data)
       this.setState({ data: rsp.data })
     }).catch((err) => {
       this.setState({
@@ -79,6 +71,7 @@ export default class List extends React.Component {
 
     return (
       <Container>
+
         <div style={{ textAlign: 'center' }}>
           <Typography variant="h3" noWrap>
             User data list

@@ -3,9 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
+import { Divider } from '@material-ui/core';
 
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -78,7 +77,7 @@ export default function App() {
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             User info dashboard
-            </Typography>
+          </Typography>
         </Toolbar>
       </AppBar>
 
@@ -100,12 +99,21 @@ export default function App() {
             <Switch>
               <Route component={Form} exact path='/user-form' />
               <Route component={UserList} exact path='/user-list' />
+              <Route>
+                <div style={{ textAlign: 'center' }}>
+                  <Typography variant="h3" noWrap>
+                    Welcome to user info dashboard
+                  </Typography>
+                  <Divider />
+                </div>
+              </Route>
             </Switch>
           </Container>
 
         </div>
       </Router>
 
+      {console.log('build 0.3')}
     </div >
   );
 
