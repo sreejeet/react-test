@@ -57,7 +57,7 @@ export default class List extends React.Component {
 
   componentDidMount() {
     axios.get(
-      'http://ec2-13-232-194-142.ap-south-1.compute.amazonaws.com/api/userdata/',
+      'http://ec2-13-232-194-142.ap-south-1.compute.amazonaws.com/api/userdata/?format=json',
     ).then(rsp => {
       console.log(rsp.data)
       this.setState({ data: rsp.data })
