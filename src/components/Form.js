@@ -112,7 +112,7 @@ export default class Form extends React.Component {
     })
 
     axios.post(
-      'http://ec2-13-127-22-123.ap-south-1.compute.amazonaws.com/api/userdata/',
+      '//whispering-peak-79518.herokuapp.com/api/userdata/',
       this.state,
       {
         headers: {
@@ -123,7 +123,7 @@ export default class Form extends React.Component {
     ).then(response => {
       this.resetErrors()
       this.setState({ submit_success: true })
-      window.location.pathname = '/'
+      window.location.pathname = '/user-list'
     }).catch((err) => {
       this.setState({
         err_name: err.response.data.name,
