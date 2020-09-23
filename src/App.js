@@ -77,21 +77,8 @@ export default function App() {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            User info dashboard
             </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
         </Toolbar>
       </AppBar>
 
@@ -100,9 +87,9 @@ export default function App() {
 
           <nav>
             <ul>
-              {/* <li>
-                <Link to="/">List data</Link>
-              </li> */}
+              <li>
+                <Link to="/user-list">List data</Link>
+              </li>
               <li>
                 <Link to="/user-form">User form</Link>
               </li>
@@ -112,7 +99,7 @@ export default function App() {
           <Container>
             <Switch>
               <Route component={Form} exact path='/user-form' />
-              <Route component={UserList} exact path='/' />
+              <Route component={UserList} exact path='/user-list' />
             </Switch>
           </Container>
 

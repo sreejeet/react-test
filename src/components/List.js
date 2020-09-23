@@ -56,9 +56,8 @@ export default class List extends React.Component {
   }
 
   componentDidMount() {
-
     axios.get(
-      'http://localhost:8000/userdata/',
+      'http://ec2-13-232-194-142.ap-south-1.compute.amazonaws.com/api/userdata/',
     ).then(rsp => {
       console.log(rsp.data)
       this.setState({ data: rsp.data })
@@ -74,7 +73,6 @@ export default class List extends React.Component {
       })
       console.log(err)
     })
-    console.log("hi")
   }
 
   render() {
